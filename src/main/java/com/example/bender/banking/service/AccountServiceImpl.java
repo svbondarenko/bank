@@ -9,22 +9,19 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Random;
 import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
 
 @Service
 public class AccountServiceImpl implements AccountService {
 
+    private final Random number = new Random(123L);
     @Autowired
     private AccountRepository accountRepository;
-
-    private final Random number = new Random(123L);
-
 
     private void transferAmount(BankAccount from, BankAccount to, double amount) throws InterruptedException {
 
         while (true) {
-            Lock fromLock = new ReentrantLock();
-            Lock toLock = new ReentrantLock();
+            Lock fromLock = from.getLock();
+            Lock toLock = to.getLock();
             if (fromLock.tryLock()) {
                 try {
                     if (toLock.tryLock()) {

@@ -7,7 +7,6 @@
 package com.example.bender.banking.service;
 
 
-
 /**
  * Root of hierarchy of data access exceptions.
  */
