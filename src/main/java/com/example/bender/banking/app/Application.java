@@ -10,11 +10,11 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @ComponentScan(basePackages = {"com.example.bender.banking"})
 @EntityScan("com.example.bender.banking.domain")
 @EnableJpaRepositories("com.example.bender.banking.dao")
-public class SampleSpringBootApplication {
+public class Application {
 
     public static void main(String[] args) {
 
-        SpringApplication.run(SampleSpringBootApplication.class, args);
+        SpringApplication.run(Application.class, args);
 
     }
 

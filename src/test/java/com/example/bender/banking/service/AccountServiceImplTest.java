@@ -1,6 +1,6 @@
 package com.example.bender.banking.service;
 
-import com.example.bender.banking.app.SampleSpringBootApplication;
+import com.example.bender.banking.app.Application;
 import com.example.bender.banking.dao.AccountRepository;
 import com.example.bender.banking.domain.BankAccount;
 import org.junit.Assert;
@@ -11,7 +11,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = SampleSpringBootApplication.class)
+@SpringBootTest(classes = Application.class)
 public class AccountServiceImplTest {
 
     @Autowired
